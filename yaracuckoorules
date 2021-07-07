@@ -1,0 +1,150 @@
+rule 1:
+
+import "cuckoo"
+ 
+rule findlolbin
+{
+	meta:
+		description = "LOLbas identifier - Full Path of Binaries To Be Found"
+		category = "LOLbas"
+		author = "Freddie Barr-Smith"
+
+	condition:
+
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Atbroker.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\bash.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\bitsadmin.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\certutil.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\cmd.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\cmdkey.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\cmstp.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\control.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\cscript.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\diskshadow.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Dnscmd.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\esentutl.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\eventvwr.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Expand.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Extexport.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\extrac32.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\findstr.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\forfiles.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\ftp.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\gpscript.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\hh.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\ie4uinit.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\ieuinit.inf/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\infdefaultinstall.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\makecab.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\mavinject.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\mmc.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\msconfig.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Msdt.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\mshta.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\odbcconf.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\pcalua.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\pcwrun.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Presentationhost.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\print.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\reg.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\regedit.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\Register-cimprovider.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\regsvcs.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\regsvr32.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\replace.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\rpcping.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\rundll32.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\runonce.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\sc.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\schtasks.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\scriptrunner.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\SyncAppvPublishingServer.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\verclsid.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\wbem\\wmic.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\wscript.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\wsreset.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\xwizard.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\dxcap.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\vsjitdebugger.exe/) or
+        cuckoo.filesystem.file_access(/C\:\\WINDOWS\\system32\\wsl.exe/)
+
+
+
+
+
+}
+
+rule 2:
+
+import "cuckoo"
+ 
+
+
+
+rule findlolbininstalled
+{
+        meta:
+                description = "LOLbas identifier - Full Path of Installed Binaries To Be Found"
+                category = "LOLbas"
+                author = "Freddie Barr-Smith"
+
+        condition:
+
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?appvlp\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?BgInfo\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C\:\\Program\ Files\ \(x64\)\\Windows\ Kits\\10\\Debuggers\\x64\\cdb.exe/) or
+        cuckoo.filesystem.file_access(/^C\:\\Program\ Files\ \(x86\)\\Windows\ Kits\\10\\Debuggers\\x86\\cdb.exe/) or
+        cuckoo.filesystem.file_access(/^C\:\\Program\ Files\ \(x64\)\\Windows\ Kits\\10\\Debuggers\\x64\\Cdb.exe/) or
+        cuckoo.filesystem.file_access(/^C\:\\Program\ Files\ \(x86\)\\Windows\ Kits\\10\\Debuggers\\x86\\Cdb.exe/) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft)?(.*\\)?csi\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\devtoolslauncher.exe/) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?dnx\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\Dxcap.exe/) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\dxcap.exe/) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?Excel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?EXCEL\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?excel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?Excel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?EXCEL\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?excel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?mftrace\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?mftrace\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?Mftrace\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\?(.*\\)?mftrace\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\?(.*\\)?Mftrace\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\IIS\\?(.*\\)?msdeploy\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(IIS\\)?(.*\\)?msdeploy\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?msxsl\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?Powerpnt\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?POWERPNT\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?powerpnt\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?Powerpnt\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?POWERPNT\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?powerpnt\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?rcsi\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?SQLDumper\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?SQLToolsPS\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\?(.*\\)?SQLPS\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\?(.*\\)?SQLDumper\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\?(.*\\)?SQLPS\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\?(.*\\)?SQLToolsPS\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?Squirrel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?squirrel\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?Update\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?update\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?te\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?Tracker\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\(.*\\)?tracker\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\vsjitdebugger.exe/) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?Winword\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?WINWORD\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files\\(Microsoft Office\\)?(.*\\)?winword\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?Winword\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?WINWORD\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Program Files \(x86\)\\(Microsoft Office\\)?(.*\\)?winword\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\Wsl.exe/) or
+        cuckoo.filesystem.file_access(/^C\:\\WINDOWS\\system32\\wsl.exe/) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?Update\.exe$/i) or
+        cuckoo.filesystem.file_access(/^C:\\Users\\?(.*\\)?update\.exe$/i) or
+
+}
